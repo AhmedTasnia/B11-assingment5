@@ -122,8 +122,8 @@ document.getElementById("clear-btn").addEventListener("click", function (event) 
 })
 
     const now = new Date();
-    const date = now.toLocaleDateString(); 
-    document.getElementById("date").textContent = date; 
+    const formattedDate = now.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
+    document.getElementById("date").textContent = formattedDate;  
 
     const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     const now2 = new Date();
@@ -145,3 +145,4 @@ document.getElementById("clear-btn").addEventListener("click", function (event) 
     document.getElementById("theme-btn").addEventListener("click", function () {
         document.body.style.backgroundColor = `rgb(${getRandomColor()}, ${getRandomColor()}, ${getRandomColor()})`; 
     });
+
